@@ -20,19 +20,19 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException();
             }
             var grades = Students.OrderByDescending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
-            if(averageGrade >= grades[(int)Math.Ceiling(grades.Count * .2)])
+            if(averageGrade >= grades[(int)Math.Ceiling(grades.Count * .2) - 1])
             {
                 return 'A';
             }
-            else if (averageGrade >= grades[(int)Math.Ceiling(grades.Count * .4)])
+            else if (averageGrade >= grades[(int)Math.Ceiling(grades.Count * .4) - 1])
             {
                 return 'B';
             }
-            else if (averageGrade >= grades[(int)Math.Ceiling(grades.Count * .6)])
+            else if (averageGrade >= grades[(int)Math.Ceiling(grades.Count * .6) - 1])
             {
                 return 'C';
             }
-            else if (averageGrade >= grades[(int)Math.Ceiling(grades.Count * .8)])
+            else if (averageGrade >= grades[(int)Math.Ceiling(grades.Count * .8) - 1])
             {
                 return 'D';
             }
